@@ -17,15 +17,12 @@ Tailwind CSS: Utility-first CSS framework for rapidly building custom designs.
 Axios: Promise-based HTTP client for making API requests.
 
 
-Frontend Setup
-Navigate to the frontend directory:
 
-
-cd ../frontend
+git clone https://github.com/ABIKEM01/hux-assessment-frontend.git
+cd ../hux-assessment-frontend
 Install dependencies:
 
-bash
-Copy code
+
 npm install
 Start the frontend development server:
 
