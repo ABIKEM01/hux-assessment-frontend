@@ -1,26 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { RootState } from './store/store';
+import Homepage from './pages/Homepage';
+import LoginPage from './pages/LoginPage';
+import ContactsListPage from './pages/ContactsListPage';
+import CreateContactPage from './pages/CreateContactPage';
+import EditContactPage from './pages/EditContactPage';
+import ContactDetailsPage from './pages/ContactDetailsPage';
+import SignupPage from './pages/SignupPage'
 
-function App() {
+const App: React.FC = () => {
+  const isAuthenticated = useSelector((state: RootState) => state.auth.isAuthenticated);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="min-h-screen bg-gray-100">
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/signup" element={<SignupPage />} />
+        <Route path="/contacts" element={isAuthenticated ? <ContactsListPage /> : <Navigate to="/" />} />
+        <Route path="/contacts/new" element={isAuthenticated ? <CreateContactPage /> : <Navigate to="/" />} />
+        <Route path="/contacts/:id" element={isAuthenticated ? <ContactDetailsPage /> : <Navigate to="/" />} />
+        <Route path="/contacts/:id/edit" element={isAuthenticated ? <EditContactPage /> : <Navigate to="/" />} />
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
     </div>
   );
-}
+};
 
 export default App;

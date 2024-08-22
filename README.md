@@ -1,46 +1,67 @@
-# Getting Started with Create React App
+Contact Management Application
+This is a full-stack contact management application built with React, Redux, and Tailwind CSS on the frontend, and Node.js, Express, MongoDB, and JWT-based authentication on the backend. The application allows users to create, retrieve, update, and delete contacts, with secure authentication and authorization.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Features
+User Authentication: Secure login and signup functionality using JWT.
+Contact Management: Create, view, edit, and delete contacts.
+Responsive Design: Fully responsive UI built with Tailwind CSS.
+State Management: Redux is used for managing the state across the application.
+API Integration: Axios is used for making API calls to the backend.
 
-## Available Scripts
+Technologies Used
+Frontend
+React: JavaScript library for building user interfaces.
+Redux: State management library for React.
+TypeScript: Typed superset of JavaScript that compiles to plain JavaScript.
+Tailwind CSS: Utility-first CSS framework for rapidly building custom designs.
+Axios: Promise-based HTTP client for making API requests.
 
-In the project directory, you can run:
 
-### `npm start`
+Frontend Setup
+Navigate to the frontend directory:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+cd ../frontend
+Install dependencies:
 
-### `npm test`
+bash
+Copy code
+npm install
+Start the frontend development server:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+npm start
+The frontend server will run on http://localhost:3000.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Usage
+Open http://localhost:3000 in your web browser.
+Sign up for a new account or log in if you already have an account.
+Add, view, edit, or delete contacts using the user interface.
+API Endpoints
+POST /api/auth/register: Register a new user.
+POST /api/auth/login: Authenticate a user and receive a JWT.
+GET /api/contacts: Retrieve a list of contacts.
+POST /api/contacts: Create a new contact.
+PUT /api/contacts/
+: Update an existing contact.
+DELETE /api/contacts/
+: Delete a contact.
+Project Structure
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+contact-management-app/
+│
+├── frontend/                # Frontend source code
+│   ├── src/                 # React source files
+│   │   ├── components/      # Reusable UI components
+│   │   ├── pages/           # React components for different pages
+│   │   ├── store/           # Redux store and slices
+│   │   └── App.tsx          # Main application component
+│   └── public/              # Static assets
+│
+└── README.md                # Project documentation
+Testing
+Frontend: Unit tests for frontend components can be written using Jest and React Testing Library.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+License
+This project is licensed under the MIT License.
